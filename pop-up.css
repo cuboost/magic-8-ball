@@ -1,0 +1,151 @@
+/* Import "Yusei Magic" Font */
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+/* Colors */
+:root {
+    --primary-blue: #2a3962;
+    --hover-blue: #25335a;
+    --active-blue: #19233e;
+    --disabled-blue: #4d5a8064;
+    --font-family: 'Yusei Magic', sans-serif;
+    --text: aliceblue;
+    --text-actice: #dfebf5;
+    --body-background: #040a2c;
+    --background-image: url("./images/background.jpeg") no-repeat center/cover fixed;
+}
+
+/* Body */
+body {
+    color: var(--text);
+    font-family: var(--font-family);
+    transition: all 0.4s;
+    background: var(--body-background);
+    user-select: none;
+}
+
+/* Main */
+main {
+    background: var(--background-image);
+    border-radius: 20px;
+    width: 300px;
+    height: 210px;
+    overflow: scroll;
+    text-align: center;
+}
+
+/* Text */
+h1 {
+    margin-bottom: 8px;
+    padding: 0 20px;
+}
+
+h2 {
+    margin: none;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin: 8px;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--text);
+    background-color: var(--primary-blue);
+    transition: all 0.4s;
+}
+
+button:hover {
+    background-color: var(--hover-blue);
+    color: var(--text);
+}
+
+button:active {
+    background-color: var(--active-blue);
+    color: var(--text-actice);
+}
+
+button:disabled {
+    background-color: var(--disabled-blue);
+    cursor: wait;
+}
+
+/* Box for Advice Text OR Text Input */
+.answer {
+    min-height: 90px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text Input */
+#text-input {
+    font-family: var(--font-family);
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    transition: all 0.4s;
+    display: none;
+    outline: none;
+}
+
+/* Text Input Animated */
+.text-input-animate {
+    display: block !important;
+    animation: show-input 2s normal forwards;
+}
+
+@keyframes show-input {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+
+    50% {
+        transform: rotateX(-50deg);
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Advice Text */
+#advice-text {
+    font-size: 0;
+}
+
+/* Advice Text Animated */
+.advice-text-animate {
+    animation: show-answer 3s normal forwards;
+}
+
+
+@keyframes show-answer {
+    0% {
+        font-size: 0;
+    }
+
+    40% {
+        font-size: 1.6em;
+    }
+
+    50% {
+        font-size: 1.5em;
+    }
+
+    70% {
+        font-size: 1.5em;
+    }
+
+    100% {
+        font-size: 0;
+    }
+}
